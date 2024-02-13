@@ -1,0 +1,45 @@
+#Erik Dunlap
+#CIS129
+#Lab work to create a muffin shop receipt
+
+print("Hi! Welcome to Erik's Muffin Shop. How many muffins do you want?")
+muffin= input()
+
+print("Alright, "+str(muffin)+" muffins. \
+How much Coffee do you want with that?")
+coffee= input()
+
+print("How many of these giant cookies do you want?")
+cookie= input()
+
+print("Finally, how many of these gold bars?")
+gold= input()
+
+print(""+str(muffin)+" MUFFINS, "+str(coffee)+" COFFEE, \
+"+str(cookie)+" GIANT COOKIES, AND "+str(gold)+" GOLD BARS \
+ORDER UP!")
+#Input collections
+
+coffeePrice= int(500.0*float(coffee))/100
+muffinPrice= int(400.0*float(muffin))/100
+cookiePrice= int(200.0*float(cookie))/100
+goldPrice= int(1000000*float(gold))/100
+tax= int((float(coffeePrice)+float(muffinPrice)+float(cookiePrice)+float(goldPrice))*6)/100
+total= float(coffeePrice)+float(muffinPrice)+float(cookiePrice)+float(goldPrice)+float(tax)
+#Rounding Down to at most hundreths
+
+print("\n***************************************\nMy Coffee and Muffin Shop\n\
+Numbers of coffees bought?\n"+str(coffee)+"\nNumbers of Muffins bought\n\
+"+str(muffin)+"\nNumber of Giant Cookies bought\n"+str(cookie)+"\n\
+Number of Gold Bars bought\n"+str(gold)+"\n***************************************")
+#Naming order
+print("\n***************************************\nMy Coffee and Muffin Shop Receipt\n\
+"+str(coffee)+" Coffee at $5 each: $ "+str(coffeePrice)+"\n"+str(muffin)+"\
+ Muffins at $4 each: $ "+str(muffinPrice)+"\n"+str(cookie)+" Giant Cookies\
+ at $2 each: $ "+str(cookiePrice)+"\n"+str(gold)+" Gold Bars at $10000 each:\
+ $ "+str(goldPrice)+"\n6% tax $ "+str(tax)+"\n---------\n\
+Total: $ "+str(total)+"\n***************************************")
+print("\nThank you for ordering at My Coffee and Muffin Shop! Please come again!")
+#Price of order
+#ToDo figure out how to add indents without adding it to the program
+#🧁☕
