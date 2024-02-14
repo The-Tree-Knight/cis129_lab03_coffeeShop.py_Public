@@ -20,12 +20,13 @@ print(""+str(muffin)+" MUFFINS, "+str(coffee)+" COFFEE, \
 ORDER UP!")
 #Input collections
 
-coffeePrice= int(500.0*float(coffee))/100
-muffinPrice= int(400.0*float(muffin))/100
-cookiePrice= int(200.0*float(cookie))/100
-goldPrice= int(1000000*float(gold))/100
-tax= int((float(coffeePrice)+float(muffinPrice)+float(cookiePrice)+float(goldPrice))*6)/100
-total= float(coffeePrice)+float(muffinPrice)+float(cookiePrice)+float(goldPrice)+float(tax)
+coffeePrice= round(500*float(coffee))/100
+muffinPrice= round(400*float(muffin))/100
+cookiePrice= round(200*float(cookie))/100
+goldPrice= round(1000000*float(gold))/100
+untaxedPay= float(coffeePrice)+float(muffinPrice)+float(cookiePrice)+float(goldPrice)
+tax= round(float(untaxedPay)*6)/100
+total= float(untaxedPay)+float(tax)
 #Rounding Down to at most hundreths
 
 print("\n***************************************\nMy Coffee and Muffin Shop\n\
