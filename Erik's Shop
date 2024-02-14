@@ -30,7 +30,7 @@ total= float(untaxedPay)+float(tax)
 #Rounding Down to at most hundreths
 
 print("\n***************************************\nMy Coffee and Muffin Shop\n\
-Numbers of coffees bought?\n"+str(coffee)+"\nNumbers of Muffins bought\n\
+Numbers of coffees bought\n"+str(coffee)+"\nNumbers of Muffins bought\n\
 "+str(muffin)+"\nNumber of Giant Cookies bought\n"+str(cookie)+"\n\
 Number of Gold Bars bought\n"+str(gold)+"\n***************************************")
 #Naming order
