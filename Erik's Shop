@@ -8,21 +8,42 @@ oneCookiePrice= 2
 oneGoldPrice=10000
 salesTax=6
 
-print("Hi! Welcome to Erik's Muffin Shop. Prices are on the board. So how many muffins do you want?")
-muffin= input()
+print("Hi! Welcome to Erik's Muffin Shop. Prices are on the board.")
+while True:
+    muffin= input("So how many muffins do you want?\n")
+    if float(muffin) < 0:
+        print('As the board says WE DON\'T SELL ANTIMUFFINS')
+    elif float(muffin) == 0:
+        print('You have to buy at least one')
+    else:
+        break
 
-print("Alright, "+str(muffin)+" muffins. \
-How much Coffee do you want with that?")
-coffee= input()
+print("Alright, "+muffin+" muffins.")
+while True:
+    coffee= input("How much coffee do you want?\n")
+    if float(coffee) < 0:
+        print("... and do you have coffee to sell me?\nIf you don't then")
+    elif float(coffee) == 0:
+        print("Sorry, you have to get at least one. Store policy")
+    else:
+        break
 
-print("How many of these giant cookies do you want?")
-cookie= input()
 
-print("Finally, how many of these gold bars?")
-gold= input()
+cookie= input("How many of these giant cookies do you want?\n")
+if float(cookie) < 0:
+    print("We actually lose money on selling cookies so I'll happily buy them")
+elif float(cookie) == 0:
+    print("Alright")
 
-print(""+str(muffin)+" MUFFINS, "+str(coffee)+" COFFEE, \
-"+str(cookie)+" GIANT COOKIES, AND "+str(gold)+" GOLD BARS \
+while True:
+    gold= input("How many of these gold bars?\n")
+    if float(gold) < 1:
+        print("You have to buy one or more so")
+    else:
+        break
+
+print(""+muffin+" MUFFINS, "+coffee+" COFFEE, \
+"+cookie+" GIANT COOKIES, AND "+gold+" GOLD BARS \
 ORDER UP!")
 #Input collections
 
@@ -32,22 +53,21 @@ cookiePrice= round(100*float(oneCookiePrice)*float(cookie))/100
 goldPrice= round(100*float(oneGoldPrice)*float(gold))/100
 untaxedPay= float(coffeePrice)+float(muffinPrice)+float(cookiePrice)+float(goldPrice)
 tax= round(float(untaxedPay)*float(salesTax))/100
-total= float(untaxedPay)+float(tax)
+total= untaxedPay+tax
 #Rounding Down to at most hundreths
 
 print("\n***************************************\nMy Coffee and Muffin Shop\n\
-Number of coffees bought?\n"+str(coffee)+"\nNumber of muffins bought?\n\
-"+str(muffin)+"\nNumber of giant cookies bought?\n"+str(cookie)+"\n\
-Number of gold bars bought?\n"+str(gold)+"\n***************************************")
+Number of coffees bought?\n"+coffee+"\nNumber of muffins bought?\n\
+"+muffin+"\nNumber of giant cookies bought?\n"+cookie+"\n\
+Number of gold bars bought?\n"+gold+"\n***************************************")
 #Naming order
 print("\n***************************************\nMy Coffee and Muffin Shop Receipt\n\
-"+str(coffee)+" Coffee at $"+str(oneCoffeePrice)+" each: $ "+str(coffeePrice)+"\n"+str(muffin)+"\
- Muffins at $"+str(oneMuffinPrice)+" each: $ "+str(muffinPrice)+"\n"+str(cookie)+" Giant Cookies\
- at $"+str(oneCookiePrice)+" each: $ "+str(cookiePrice)+"\n"+str(gold)+" Gold Bars at $"+str(oneGoldPrice)+" each:\
+"+coffee+" Coffee at $"+str(oneCoffeePrice)+" each: $ "+str(coffeePrice)+"\n"+muffin+"\
+ Muffins at $"+str(oneMuffinPrice)+" each: $ "+str(muffinPrice)+"\n"+cookie+" Giant Cookies\
+ at $"+str(oneCookiePrice)+" each: $ "+str(cookiePrice)+"\n"+gold+" Gold Bars at $"+str(oneGoldPrice)+" each:\
  $ "+str(goldPrice)+"\n"+str(salesTax)+"% tax $ "+str(tax)+"\n---------\n\
 Total: $ "+str(total)+"\n***************************************")
 print("\nThank you for ordering at My Coffee and Muffin Shop! Please come again!")
 #Price of order
 #ToDo figure out how to add indents without adding it to the program
 #🧁☕
-
